@@ -1,0 +1,20 @@
+<h2>Bonus Calculator</h2>
+
+<div>
+  <label for="firstDayOfWork">First Day of Work:</label>
+  <input type="date" id="firstDayOfWork" [(ngModel)]="firstDayOfWork">
+</div>
+
+<div>
+  <label for="salary">Salary:</label>
+  <input type="number" id="salary" [(ngModel)]="salary">
+</div>
+
+<button (click)="calculateBonusDates()">Calculate Bonus Dates</button>
+
+<div *ngIf="bonusDates.length > 0">
+  <h3>Bonus Dates:</h3>
+  <ul>
+    <li *ngFor="let bonusDate of bonusDates">{{ bonusDate | date }}</li>
+  </ul>
+</div>
